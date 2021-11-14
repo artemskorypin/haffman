@@ -14,7 +14,7 @@ struct Range
     int rb;
 };
 
-struct Sort//сравнивает 2, если Sort=1 то левый меньше правого и если 0, то наоборот
+struct Sort//сравнивает 2, если Sort=1 то левый ,больше правого и если 0, то наоборот
 {
 	bool operator() (Range l, Range r)
 	{
@@ -43,7 +43,7 @@ int main()
         p.numb=ii->second;
         L.push_back(p);
     }
-    L.sort(Sort());
+    L.sort(Sort());//по убыванию
     L.begin()->rb=L.begin()->numb;
     L.begin()->lb=0;
     list<Range>::iterator it=L.begin(), i2;
@@ -74,7 +74,7 @@ int main()
 	f.seekg(0);//вернем позицию чтения в начало файла
     int l=0, h=65535, i=0, delitel=L.back().rb; 
     int F_q=(h+1)/4, Half=F_q*2, T_q=F_q*3, bits_to_follow=0;
-    char tx=0;
+    char tx=0;	
     count=0;
     while(!f.eof())
     {
@@ -149,7 +149,7 @@ int main()
             h+=h+1;
         }
     }
-    g<<tx;
+
     f.close();
     g.close();
     return 0;
